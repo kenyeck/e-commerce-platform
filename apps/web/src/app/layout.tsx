@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
    // Note hydration warning is suppressed due to ThemeToggle component
    return (
-      <html lang="en" suppressHydrationWarning>
+      <html suppressHydrationWarning>
          <body>
             <Providers>
                <Nav />

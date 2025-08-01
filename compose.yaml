@@ -2,28 +2,28 @@ services:
   auth-service:
     build:
       args:
-      - NODE_ENV=development
+      - NODE_ENV=production
       context: /services/auth-service
-      target: development
+      target: production
     command: pnpm start
     ports:
       - 4000:4000
     environment:
-      - NODE_ENV=development
+      - NODE_ENV=production
     networks:
       - public
       - private
   api-gateway:
     build:
       args:
-      - NODE_ENV=development
+      - NODE_ENV=production
       context: /apps/api-gateway
-      target: development
+      target: production
     command: pnpm start
     ports:
       - 4001:4001
     environment:
-      - NODE_ENV=development
+      - NODE_ENV=production
     networks:
       - public
       - private

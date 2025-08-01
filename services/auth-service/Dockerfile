@@ -2,7 +2,7 @@
 
 # if you're doing anything beyond your local machine, please pin this to a specific version at https://hub.docker.com/_/node/
 # Use Node.js LTS with pnpm
-FROM node:20-alpine AS development
+FROM node:20-alpine AS production
 
 # Set the working directory
 WORKDIR /code

@@ -1,0 +1,32 @@
+services:
+  auth-service:
+    build:
+      args:
+      - NODE_ENV=development
+      context: /services/auth-service
+      target: development
+    command: pnpm start
+    ports:
+      - 4000:4000
+    environment:
+      - NODE_ENV=development
+    networks:
+      - public
+      - private
+  api-gateway:
+    build:
+      args:
+      - NODE_ENV=development
+      context: /apps/api-gateway
+      target: development
+    command: pnpm start
+    ports:
+      - 4001:4001
+    environment:
+      - NODE_ENV=development
+    networks:
+      - public
+      - private
+networks:
+  public:
+  private:

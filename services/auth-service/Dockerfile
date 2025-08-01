@@ -2,7 +2,7 @@
 
 # if you're doing anything beyond your local machine, please pin this to a specific version at https://hub.docker.com/_/node/
 # Use Node.js LTS with pnpm
-FROM node:lts AS development
+FROM node:20-alpine AS development
 
 # Set the working directory
 WORKDIR /code
@@ -25,9 +25,9 @@ COPY src/ ./src/
 #COPY pnpm-lock.yaml pnpm-workspace.yaml ./
 
 # Install dependencies using pnpm
-RUN pnpm install --verbose
+RUN pnpm install
 
-# Build only auth-service (using Turborepo filter)
+# Build auth-service
 RUN pnpm build
 
 # default to port 4000 for node

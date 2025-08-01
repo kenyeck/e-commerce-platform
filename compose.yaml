@@ -27,6 +27,26 @@ services:
     networks:
       - public
       - private
+  web:
+    build:
+      args:
+      - NODE_ENV=production
+      context: .
+      dockerfile: apps/web/Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+    depends_on:
+      auth-service:
+        condition: status_healthy
+      api-gateway:
+        condition: status_healthy
+    networks:
+      - app-network
 networks:
+  app-network:
+    driver: bridge
   public:
   private:

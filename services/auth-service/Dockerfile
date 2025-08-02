@@ -30,8 +30,8 @@ RUN pnpm install
 # Build auth-service
 RUN pnpm build
 
-# default to port 4000 for node
-ARG PORT=4000
+# default to port 4001 for node
+ARG PORT=4001
 ENV PORT=$PORT
 EXPOSE $PORT
 

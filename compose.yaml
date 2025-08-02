@@ -7,7 +7,7 @@ services:
       target: production
     command: pnpm start
     ports:
-      - 4000:4000
+      - 4001:4001
     environment:
       - NODE_ENV=production
     networks:
@@ -21,7 +21,7 @@ services:
       target: production
     command: pnpm start
     ports:
-      - 4001:4001
+      - 4000:4000
     environment:
       - NODE_ENV=production
     networks:

@@ -1,5 +1,5 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
+import { NextResponse } from 'next/server';
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  res.status(200).json({ status: 'healthy' });
+export async function GET() {
+  return NextResponse.json({ status: 'healthy' });
 }

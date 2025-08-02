@@ -40,9 +40,9 @@ services:
       - PORT=3000
     depends_on:
       auth-service:
-        condition: status_healthy
+        condition: service_started
       api-gateway:
-        condition: status_healthy
+        condition: service_started
     networks:
       - app-network
 networks:

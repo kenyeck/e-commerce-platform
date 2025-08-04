@@ -37,7 +37,7 @@ EXPOSE $PORT
 
 # check every 30s to ensure this service returns HTTP 200
 HEALTHCHECK --interval=30s \
-CMD curl -s -I http://localhost:${PORT}/api/health | head -n 1 | grep 200 || exit 1
+CMD curl -s -I http://localhost:${PORT}/health | head -n 1 | grep 200 || exit 1
 
 # if you want to use npm start instead, then use `docker run --init in production`
 # so that signals are passed properly. Note the code in index.js is needed to catch Docker signals
